@@ -47,7 +47,7 @@ class SocketIOManager {
       },
     );
     _clearExisting = false;
-    final socket = SocketIO(index, _streamsChannel);
+    final socket = SocketIO(index!, _streamsChannel);
     _sockets[index] = socket;
     return socket;
   }

@@ -11,8 +11,8 @@ class ErrorHandler {
     return {
       'exceptionType': '${details.exception.runtimeType}',
       'exception': details.exceptionAsString(),
-      'context': details.context?.toDescription(),
-      'library': details.library,
+      'context': details.context!.toDescription(),
+      'library': details.library!,
       'stackTrace': '${details.stack}',
     };
   }

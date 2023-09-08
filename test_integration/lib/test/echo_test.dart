@@ -4,11 +4,11 @@ import '../factory/reporter.dart';
 import 'utils.dart';
 
 Future<Map<String, dynamic>> echoTest({
-  Reporter reporter,
-  Map<String, dynamic> payload,
+  Reporter? reporter,
+  Map<String, dynamic>? payload,
 }) async {
   // creating socket
-  final socket = await createSocket(payload);
+  final socket = await createSocket(payload!);
 
   final messages = <Object>[];
 
@@ -16,7 +16,7 @@ Future<Map<String, dynamic>> echoTest({
   final subscription = socket.on('echo').listen(messages.add);
 
   for (final message in messagesToPublish) {
-    await socket.emit('echo', [message]);
+    await socket.emit('echo', [message!]);
   }
 
   await socket.emit('echo', messagesToPublish.last as List);

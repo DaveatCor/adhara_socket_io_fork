@@ -2,11 +2,11 @@ import '../factory/reporter.dart';
 import 'utils.dart';
 
 Future<Map<String, dynamic>> basicTest({
-  Reporter reporter,
-  Map<String, dynamic> payload,
+  Reporter? reporter,
+  Map<String, dynamic>? payload,
 }) async {
   // creating socket
-  final socket = await createSocket(payload);
+  final socket = await createSocket(payload!);
 
   // connect
   await socket.connectSync();
@@ -20,11 +20,11 @@ Future<Map<String, dynamic>> basicTest({
 }
 
 Future<Map<String, dynamic>> listenTest({
-  Reporter reporter,
-  Map<String, dynamic> payload,
+  Reporter? reporter,
+  Map<String, dynamic>? payload,
 }) async {
   // creating socket
-  final socket = await createSocket(payload);
+  final socket = await createSocket(payload!);
 
   final messages = {};
   final subscriptions = [
